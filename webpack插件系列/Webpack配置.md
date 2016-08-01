@@ -64,7 +64,36 @@ bundle 的入口点
 	// 输出的文件目录: ./built/bundle.js
 
 ##### 多个 entry
- 
+
+如果你的配置生成了多个 "chunk" (通过多个 `entry` 或者 `CommonsChunkPlugin` 插件)，那么你就应该用 `[name]`、`[hash]`、`[chunkhash]` 代替文件名，确保文件名唯一。
+
+`[name]` 文件名
+
+`[hash]` 编译的 hash 值
+
+`[chunkhash]` 文件的 hash 值
+	
+	{
+	  entry: {
+	    app: './src/app.js',
+	    search: './src/search.js'
+	  },
+	  output: {
+	    filename: '[name].js',
+	    path: __dirname + '/built'
+	  }
+	}
+	
+	// 输出: ./built/app.js, ./built/search.js
+
+### output.path
+
+输出的目录必须是 **绝对路径**
+
+`[hash]` 编译的 hash 值
+
+
+
 ## loader
 
 ## plugins
