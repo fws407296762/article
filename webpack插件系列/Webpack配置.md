@@ -1,5 +1,9 @@
 # Webpack 配置
 
+如果需要将多个配置同时执行的时候，可以这么写：
+
+	module.exports = [config_1,config_2];
+
 ## context
 
 #### 说明
